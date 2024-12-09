@@ -1,0 +1,42 @@
+prefix: "§x§3§7§0§8§F§BV§x§4§7§1§D§F§Be§x§5§8§3§1§F§Cr§x§6§8§4§6§F§Cl§x§7§9§5§B§F§Co§x§8§9§6§F§F§Cs§x§9§9§8§4§F§Du§x§A§A§9§8§F§Dn§x§B§A§A§D§F§Dg &8» "
+
+messages:
+  no_item_in_hand: "&cDu musst ein Item in der Hand halten, um es als Giveaway zu verwenden!"
+  giveaway_start: "&7Der Spieler &e{player} &7hat ein Giveaway gestartet! Das Item: &e{item}"
+  giveaway_end: "&7Der Spieler &e{winner} &7hat &e{item} &7gewonnen!"
+  plugin_reloaded: "&aDas Giveaway-Plugin wurde neu geladen!"
+  no_permission: "&cDu hast keine Berechtigung, diesen Befehl auszuführen."
+
+titles:
+  giveaway_start:
+    title: "&6✦ §x§3§7§0§8§F§BV§x§4§7§1§D§F§Be§x§5§8§3§1§F§Cr§x§6§8§4§6§F§Cl§x§7§9§5§B§F§Co§x§8§9§6§F§F§Cs§x§9§9§8§4§F§Du§x§A§A§9§8§F§Dn§x§B§A§A§D§F§Dg &6✦"
+    subtitle: "&fItem: &e{item}"
+    fade_in: 10
+    stay: 60
+    fade_out: 20
+  giveaway_end:
+    title: "&6✦ §x§3§7§0§8§F§BV§x§4§7§1§D§F§Be§x§5§8§3§1§F§Cr§x§6§8§4§6§F§Cl§x§7§9§5§B§F§Co§x§8§9§6§F§F§Cs§x§9§9§8§4§F§Du§x§A§A§9§8§F§Dn§x§B§A§A§D§F§Dg &6✦"
+    subtitle: "&8➜ &e{winner}"
+    fade_in: 10
+    stay: 60
+    fade_out: 20
+
+actionbars:
+  giveaway_ongoing: "&e✦ {player} ist an der Reihe! ✦"
+
+sounds:
+  giveaway_start:
+    name: "BLOCK_NOTE_BLOCK_PLING"
+    volume: 1.0
+    pitch: 1.0
+  giveaway_end:
+    name: "ENTITY_PLAYER_LEVELUP"
+    volume: 1.0
+    pitch: 1.0
+  giveaway_tick:
+    name: "BLOCK_NOTE_BLOCK_HARP"
+    volume: 1.0
+    pitch: 1.0
+
+giveaway:
+  duration: 10 # Dauer des Countdowns in Sekunden

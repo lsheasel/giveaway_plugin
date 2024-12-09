@@ -1,0 +1,3 @@
+giveaway.reload:
+  description: "Erlaubt den Spielern, das Giveaway-Plugin neu zu laden"
+  default: op
