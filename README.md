@@ -4,27 +4,7 @@
   <br>
 </h1>
 
-<h4 align="center">☄️ Source code of the Oraxen spigot plugin, made with love in Java.</h4>
-<p align="center">
-    <a href="https://www.codefactor.io/repository/github/oraxen/oraxen" alt="CodeFactor Score">
-        <img src="https://www.codefactor.io/repository/github/oraxen/oraxen/badge"/>
-    </a>
-    <a href="https://repo.oraxen.com/#/releases/io/th0rgal/oraxen" alt="version">
-        <img src="https://img.shields.io/maven-metadata/v?metadataUrl=https://repo.oraxen.com/releases/io/th0rgal/oraxen/maven-metadata.xml"/>
-    </a>
-    <a href="https://repo.oraxen.com/#/snapshots/io/th0rgal/oraxen" alt="version">
-        <img src="https://img.shields.io/maven-metadata/v?metadataUrl=https://repo.oraxen.com/snapshots/io/th0rgal/oraxen/maven-metadata.xml"/>
-    </a>
-    <a href="https://www.spigotmc.org/resources/oraxen.72448/">
-        <img alt="spigot" src="https://img.shields.io/badge/spigot-oraxen-brightgreen"/>
-    </a>
-    <a href="https://bstats.org/plugin/bukkit/Oraxen" alt="bstats servers">
-        <img src="https://img.shields.io/bstats/servers/5371?color=brightgreen"/>
-    </a>
-    <a href="https://bstats.org/plugin/bukkit/Oraxen" alt="bstats players">
-        <img src="https://img.shields.io/bstats/players/5371?color=brightgreen"/>
-    </a>
-</p>
+<h4 align="center">☄️ Source code of the Giveaway spigot plugin, made with love in Java.</h4>
 
 ## What is it?
 
