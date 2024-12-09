@@ -8,10 +8,7 @@
 
 ## What is it?
 
-Oraxen is a minecraft plugin that allows you to modify the game by adding new items, weapons, blocks, and more. One of
-its key features is to be able to generate the texture pack automatically from the configuration, which greatly
-simplifies the work of administrators. It also includes an extensive API which can be used by developers to be able to
-increase oraxen features.
+This plugin is designed for hosting live giveaways. Everyone currently playing on the server can participate.
 
 ## Features
 
