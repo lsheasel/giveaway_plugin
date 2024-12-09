@@ -12,11 +12,6 @@ This plugin is designed for hosting live giveaways. Everyone currently playing o
 
 ## Features
 
-- Automatically generate the resource-pack
-- Automatically upload the resource-pack
-- Automatically send the resource-pack to your players
-- Allow to create new items in a few lines of configuration
-- Support custom items, weapons, armors, blocks, and more
-- Modular mechanics system to empower your items
-- Automatically update configurations when you update the plugin
-- Handle configuration errors
+- Live Giveaway
+- Configurable Settings
+- More features in the future 😊
