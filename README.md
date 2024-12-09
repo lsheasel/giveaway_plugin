@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<h4 align="center">☄️ Source code of the Giveaway spigot plugin, made with love in Java.</h4>
+<h4 align="center">🎁 Source code of the Giveaway spigot plugin, made with love in Java 🎁</h4>
 
 ## What is it?
 
