@@ -8,7 +8,7 @@
 
 ## What is it?
 
-This plugin is designed for hosting live giveaways. Everyone currently playing on the server can participate.
+This plugin is designed for hosting live giveaways. Everyone currently playing on the server can participate. More features are comming soon cus I'm to lazy to code more stuff 😜
 
 ## Features
 
