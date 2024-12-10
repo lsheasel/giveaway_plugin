@@ -1,7 +1,7 @@
 name: giveaway_plugin
 version: '1.0-SNAPSHOT'
 main: first.giveaway_plugin.GiveawayPlugin
-api-version: '1.21'
+api-version: 1.21
 commands:
   giveaway:
     description: Startet das Giveaway
