@@ -23,7 +23,6 @@ public class GiveawayPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Lade die Konfiguration
         saveDefaultConfig();
 
         prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("prefix", ""));
