@@ -19,19 +19,32 @@ import java.util.Random;
 public class GiveawayPlugin extends JavaPlugin {
 
     private List<Player> participants = new ArrayList<>();
-    private String prefix; // Der Prefix aus der Konfiguration
+    private String prefix;
 
     @Override
     public void onEnable() {
         // Lade die Konfiguration
         saveDefaultConfig();
 
-        // Lade den Prefix aus der Konfiguration
         prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("prefix", ""));
 
-        // Registriere die Befehle
         getCommand("giveaway").setExecutor(this);
-        getCommand("reloadgiveaway").setExecutor(this); // Befehl für das Neu-Laden des Plugins
+        getCommand("reloadgiveaway").setExecutor(this);
+        String BLUE = "\u001B[34m";
+        String GREEN = "\u001B[32m";
+        String WHITE = "\u001B[37m";
+        String RESET = "\u001B[0m";
+
+        getLogger().info(BLUE + "┌─────────────────────" + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Plugin: " + GREEN + "enabled" + RESET);
+        getLogger().info(BLUE + "│ " + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Commands: " + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "/giveaway ✅" + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "/reloadgiveaway ✅" + RESET);
+        getLogger().info(BLUE + "│ " + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Version: 1.0" + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Made by Shease" + RESET);
+        getLogger().info(BLUE + "└─────────────────────" + RESET);
     }
 
     @Override
@@ -40,29 +53,23 @@ public class GiveawayPlugin extends JavaPlugin {
             if (sender instanceof Player) {
                 Player player = (Player) sender;
 
-                // Hole das Item in der Hand des Spielers
                 ItemStack itemInHand = player.getInventory().getItemInMainHand();
                 if (itemInHand == null || itemInHand.getType().isAir()) {
                     player.sendMessage(prefix + formatMessage("messages.no_item_in_hand"));
                     return false;
                 }
 
-                // Itemnamen auslesen
                 String itemName = getItemDisplayName(itemInHand);
 
-                // Item vom Spieler wegnehmen
                 player.getInventory().setItemInMainHand(null);
 
-                // Teilnehmerliste leeren und alle Spieler hinzufügen
                 participants.clear();
                 participants.addAll(Bukkit.getOnlinePlayers());
 
-                // Nachricht, dass das Giveaway gestartet wurde
                 Bukkit.broadcastMessage(prefix + formatMessage("messages.giveaway_start")
                         .replace("{item}", itemName)
                         .replace("{player}", player.getName()));
 
-                // Titel anzeigen
                 for (Player p : Bukkit.getOnlinePlayers()) {
                     p.sendTitle(
                             formatMessage("titles.giveaway_start.title"),
@@ -74,7 +81,6 @@ public class GiveawayPlugin extends JavaPlugin {
                     playSound(p, "sounds.giveaway_start");
                 }
 
-                // Giveaway starten (10 Sekunden warten und dann einen zufälligen Spieler auswählen)
                 new BukkitRunnable() {
                     int countdown = getConfig().getInt("giveaway.duration");
                     int currentPlayerIndex = 0;
@@ -82,16 +88,13 @@ public class GiveawayPlugin extends JavaPlugin {
                     @Override
                     public void run() {
                         if (countdown <= 0) {
-                            // Zufälligen Gewinner auswählen
                             Player winner = participants.get(new Random().nextInt(participants.size()));
                             winner.getInventory().addItem(itemInHand);
 
-                            // Gewinnernachricht senden
                             Bukkit.broadcastMessage(prefix + formatMessage("messages.giveaway_end")
                                     .replace("{winner}", winner.getName())
                                     .replace("{item}", itemName));
 
-                            // Gewinner-Titel anzeigen
                             for (Player p : Bukkit.getOnlinePlayers()) {
                                 p.sendTitle(
                                         formatMessage("titles.giveaway_end.title"),
@@ -107,7 +110,6 @@ public class GiveawayPlugin extends JavaPlugin {
 
                             cancel();
                         } else {
-                            // Nächsten Spieler auswählen und in der ActionBar anzeigen
                             Player currentPlayer = participants.get(currentPlayerIndex);
                             for (Player p : Bukkit.getOnlinePlayers()) {
                                 p.sendActionBar(formatMessage("actionbars.giveaway_ongoing")
@@ -115,12 +117,11 @@ public class GiveawayPlugin extends JavaPlugin {
                                 playSound(p, "sounds.giveaway_tick");
                             }
 
-                            // Countdown und Spielerrotation
                             countdown--;
                             currentPlayerIndex = (currentPlayerIndex + 1) % participants.size();
                         }
                     }
-                }.runTaskTimer(this, 0L, 20L); // Alle 20 Ticks (1 Sekunde)
+                }.runTaskTimer(this, 0L, 20L);
 
                 return true;
             } else {
@@ -143,24 +144,20 @@ public class GiveawayPlugin extends JavaPlugin {
     }
 
     private void reloadPlugin() {
-        // Plugin wird deaktiviert und wieder aktiviert
         Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("giveaway_plugin");
         if (plugin != null) {
             Bukkit.getServer().getPluginManager().disablePlugin(plugin);
             Bukkit.getServer().getPluginManager().enablePlugin(plugin);
         }
 
-        // Reload den Prefix aus der Konfiguration
         prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("prefix", ""));
     }
 
-    // Hilfsmethode für das Formatieren von Nachrichten
     private String formatMessage(String key) {
         String message = getConfig().getString(key, "Message not found: " + key);
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
-    // Hilfsmethode für das Abspielen von Sounds
     private void playSound(Player player, String key) {
         String soundName = getConfig().getString(key + ".name", "BLOCK_NOTE_BLOCK_PLING");
         float volume = (float) getConfig().getDouble(key + ".volume", 1.0);
@@ -169,12 +166,29 @@ public class GiveawayPlugin extends JavaPlugin {
         player.playSound(player.getLocation(), Sound.valueOf(soundName), volume, pitch);
     }
 
-    // Hilfsmethode zum Abrufen des Item-Namens
     private String getItemDisplayName(ItemStack item) {
         ItemMeta meta = item.getItemMeta();
         if (meta != null && meta.hasDisplayName()) {
-            return meta.getDisplayName(); // Benutzerdefinierter Name
+            return meta.getDisplayName();
         }
-        return item.getType().toString().replace("_", " ").toLowerCase(); // Generischer Name
+        return item.getType().toString().replace("_", " ").toLowerCase();
+    }
+    @Override
+    public void onDisable() {
+        String BLUE = "\u001B[34m";
+        String RED = "\u001B[31m";
+        String WHITE = "\u001B[37m";
+        String RESET = "\u001B[0m";
+
+        getLogger().info(BLUE + "┌──────────────────────" + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Plugin: " + RED + "disabled" + RESET);
+        getLogger().info(BLUE + "│ " + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Commands:" + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "/giveaway ❌" + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "/reloadgiveaway ❌" + RESET);
+        getLogger().info(BLUE + "│ " + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Version: 1.0" + RESET);
+        getLogger().info(BLUE + "│ " + WHITE + "Made by Shease" + RESET);
+        getLogger().info(BLUE + "└──────────────────────" + RESET);
     }
 }
