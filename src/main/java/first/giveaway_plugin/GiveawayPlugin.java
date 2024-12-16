@@ -115,7 +115,6 @@ public class GiveawayPlugin extends JavaPlugin {
                                         .replace("{player}", currentPlayer.getName()));
                                 playSound(p, "sounds.giveaway_tick");
                             }
-                            //Hs
                             countdown--;
                             currentPlayerIndex = (currentPlayerIndex + 1) % participants.size();
                         }
