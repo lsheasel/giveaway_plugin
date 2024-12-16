@@ -3,11 +3,11 @@ package first.giveaway_plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -115,7 +115,7 @@ public class GiveawayPlugin extends JavaPlugin {
                                         .replace("{player}", currentPlayer.getName()));
                                 playSound(p, "sounds.giveaway_tick");
                             }
-
+                            //Hs
                             countdown--;
                             currentPlayerIndex = (currentPlayerIndex + 1) % participants.size();
                         }
@@ -172,6 +172,7 @@ public class GiveawayPlugin extends JavaPlugin {
         }
         return item.getType().toString().replace("_", " ").toLowerCase();
     }
+
     @Override
     public void onDisable() {
         String BLUE = "\u001B[34m";

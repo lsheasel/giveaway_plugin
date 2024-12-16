@@ -1,14 +1,14 @@
 name: giveaway_plugin
-version: '1.0-SNAPSHOT'
+version: 1.0
 main: first.giveaway_plugin.GiveawayPlugin
 api-version: 1.21
 commands:
   giveaway:
-    description: Startet das Giveaway
-    usage: /giveaway
+    description: "Startet das Giveaway"
+    usage: "/giveaway"
   reloadgiveaway:
-    description: Lädt das Plugin neu
-    usage: /reloadgiveaway
+    description: "Lädt das Plugin neu"
+    usage: "/reloadgiveaway"
 permissions:
   giveaway.reload:
     description: "Erlaubt den Spielern, das Giveaway-Plugin neu zu laden"
