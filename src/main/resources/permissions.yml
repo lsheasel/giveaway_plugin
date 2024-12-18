@@ -1,3 +1,6 @@
 giveaway.reload:
   description: "Erlaubt den Spielern, das Giveaway-Plugin neu zu laden"
   default: op
+giveaway.use:
+  description: "Erlaubt den Spielern, /giveaway zu nutzen"
+  default: op

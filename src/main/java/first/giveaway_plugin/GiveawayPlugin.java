@@ -49,7 +49,7 @@ public class GiveawayPlugin extends JavaPlugin {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getName().equalsIgnoreCase("giveaway")) {
-            if (sender instanceof Player) {
+            if (sender instanceof Player && !sender.hasPermission("giveaway.use")) {
                 Player player = (Player) sender;
 
                 ItemStack itemInHand = player.getInventory().getItemInMainHand();
@@ -123,7 +123,7 @@ public class GiveawayPlugin extends JavaPlugin {
 
                 return true;
             } else {
-                sender.sendMessage(prefix + "Dieser Befehl kann nur von einem Spieler ausgeführt werden.");
+                sender.sendMessage(prefix + formatMessage("messages.no_permission"));
                 return false;
             }
         }
