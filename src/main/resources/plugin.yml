@@ -1,7 +1,8 @@
 name: giveaway_plugin
-version: 1.0
+version: ${version}
 main: first.giveaway_plugin.GiveawayPlugin
-api-version: 1.21
+api-version: '26.3'
+softdepend: [Nexo]
 commands:
   giveaway:
     description: "Startet das Giveaway"
@@ -9,7 +10,13 @@ commands:
   reloadgiveaway:
     description: "Lädt das Plugin neu"
     usage: "/reloadgiveaway"
+  giveawayconfig:
+    description: "Öffnet das Config-Menü"
+    usage: "/giveawayconfig"
 permissions:
+  giveaway.config:
+    description: "Erlaubt den Spielern, das Config-Menü zu öffnen"
+    default: op
   giveaway.reload:
     description: "Erlaubt den Spielern, das Giveaway-Plugin neu zu laden"
     default: op

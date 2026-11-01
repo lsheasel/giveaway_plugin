@@ -1,11 +1,17 @@
 prefix: "§x§5§2§4§D§F§FG§x§6§3§4§F§F§Fi§x§7§5§5§2§F§Fv§x§8§6§5§4§F§Fe§x§9§8§5§6§F§Fa§x§A§9§5§8§F§Fw§x§B§B§5§B§F§Fa§x§C§C§5§D§F§Fy &8» "
 
+# Nexo glyphs (custom textures/emojis) work in every text below, e.g.:
+#   giveaway_start: "<glyph:gift> &7The player &e{player} &7has started a giveaway!"
+#   or with the glyph's placeholder: ":gift:"
+# Custom Nexo sounds can be used by their key, e.g. name: "nexo:my_sound"
+
 messages:
   no_item_in_hand: "&cYou must hold an item in your hand to use it as a giveaway!"
   giveaway_start: "&7The player &e{player} &7has started a giveaway! The item: &e{item}"
   giveaway_end: "&7The player &e{winner} &7has won &e{item}&7!"
   plugin_reloaded: "&aThe giveaway plugin has been reloaded!"
   no_permission: "&cYou do not have permission to execute this command."
+  giveaway_running: "&cA giveaway is already running!"
 
 titles:
   giveaway_start:
