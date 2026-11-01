@@ -1,4 +1,40 @@
-# Project exclude paths
-/.gradle/
-/build/
-/build/classes/java/main/
+# --- Gradle ---
+.gradle/
+build/
+out/
+
+# --- IntelliJ IDEA ---
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# --- Eclipse / VS Code ---
+.classpath
+.project
+.settings/
+bin/
+.vscode/
+
+# --- Compiled files & archives ---
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.war
+*.zip
+*.tar.gz
+
+# --- Local test server (e.g. run-paper) ---
+run/
+server/
+
+# --- Logs & crash reports ---
+*.log
+logs/
+hs_err_pid*
+replay_pid*
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+desktop.ini

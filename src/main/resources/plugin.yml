@@ -5,21 +5,21 @@ api-version: '26.3'
 softdepend: [Nexo]
 commands:
   giveaway:
-    description: "Startet das Giveaway"
+    description: "Starts a giveaway with the item in your hand"
     usage: "/giveaway"
   reloadgiveaway:
-    description: "Lädt das Plugin neu"
+    description: "Reloads the config"
     usage: "/reloadgiveaway"
   giveawayconfig:
-    description: "Öffnet das Config-Menü"
+    description: "Opens the config menu"
     usage: "/giveawayconfig"
 permissions:
   giveaway.config:
-    description: "Erlaubt den Spielern, das Config-Menü zu öffnen"
+    description: "Allows players to open the config menu"
     default: op
   giveaway.reload:
-    description: "Erlaubt den Spielern, das Giveaway-Plugin neu zu laden"
+    description: "Allows players to reload the giveaway plugin"
     default: op
   giveaway.use:
-    description: "Erlaubt den Spielern, /giveaway zu nutzen"
+    description: "Allows players to use /giveaway"
     default: op
